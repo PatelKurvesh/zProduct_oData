@@ -1,0 +1,29 @@
+{
+  "name": "zProduct",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/hana": "^1",
+    "@sap/cds": "^7",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.2.0",
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "d": "cf deploy  mta_archives/zProduct_1.0.0.mtar"
+  },
+  "cds": {
+    "requires": {
+      "auth": "dummy",
+      "db": "hana"
+    }
+  }
+}

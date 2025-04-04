@@ -1,0 +1,30 @@
+##
+POST http://localhost:4004/v2/odata/Modules
+Content-Type: application/json
+
+{
+    "MODULE_ID":4,
+    "MODULE_NAME":"SAP Financial Accounting",
+    "MODULE_CODE":"FI",
+    "MODULE_TYPE":"Functional"
+}
+
+###
+POST http://localhost:4004/v2/odata/Employees
+Content-Type: application/json
+
+{
+    "EMP_ID": 2,
+    "EMP_NAME": "Srushti Raval",
+    "EMP_EMAIL": "srushti@example.com",
+    "EMP_MOBILE": "1234567890",
+    "EMP_DOB": "1990-05-15",
+    "EMP_TYPE": "Permanent",
+    "EMP_CODE": "EMP002",
+    "EMP_SALARY": "5000 USD",
+    "EMP_ROLE": "Consultant",
+    "STATUS": "Active",
+    "DESIGNATION": "SAP UI5 & Fiori Consultant",
+    "REPORTING_MANAGER": ["Jane Smith", "Robert Brown"],
+    "DATE_OF_JOINING": "2020-01-10"
+}
