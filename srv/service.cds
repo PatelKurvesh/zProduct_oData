@@ -10,6 +10,8 @@ service MyService @(path: '/odata') {
     entity Employees as projection on db.EMPLOYEES;
     entity Degree as projection on db.DEGREE;
     entity Project as projection on db.PROJECTS;
+    entity Tasks as projection on db.TASKS;
+    entity Timesheets as projection on db.TIMESHEETS;
 
 }
 

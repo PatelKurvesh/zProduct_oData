@@ -3,11 +3,15 @@ POST http://localhost:4004/v2/odata/Modules
 Content-Type: application/json
 
 {
-    "MODULE_ID":4,
-    "MODULE_NAME":"SAP Financial Accounting",
-    "MODULE_CODE":"FI",
+    "MODULE_NAME":"SAP Human Capital Management",
+    "MODULE_CODE":"HCM",
     "MODULE_TYPE":"Functional"
 }
+
+###
+GET http://localhost:4004/v2/odata/Modules
+
+
 
 ###
 POST http://localhost:4004/v2/odata/Employees
@@ -26,5 +30,114 @@ Content-Type: application/json
     "STATUS": "Active",
     "DESIGNATION": "SAP UI5 & Fiori Consultant",
     "REPORTING_MANAGER": ["Jane Smith", "Robert Brown"],
-    "DATE_OF_JOINING": "2020-01-10"
+    "DATE_OF_JOINING": "2020-01-10",
+    "EMP_MODULE_MODULE_ID": 4,
+    "IMG_URL":"iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACAASURBVHic7d15eFXlgcfx380C2RdW2YKsCYWIEqgsipIBRBZZAkFjcawyCCMt4"
 }
+###
+GET http://localhost:4004/v2/odata/Employees(2)
+###
+POST http://localhost:4004/v2/odata/Employees(2)/EMP_IMG
+Content-Type: image/png
+fileName:a
+
+<./a.png
+
+###
+GET http://localhost:4004/v2/odata/Employees
+
+###
+
+GET http://localhost:4004/v2/odata/Employees/$count
+
+
+###
+POST http://localhost:4004/v2/odata/Degree
+Content-Type: application/json
+
+{
+    "DEGREE_ID": 101,
+    "INSTITUTION_NAME": "IIT Bombay",
+    "CGPA": "9.2",
+    "GRADUATION_DATE": "2012-06-15",
+    "EMP_EMP_ID": 2
+}
+
+###
+POST http://localhost:4004/v2/odata/Degree
+Content-Type: application/json
+
+{
+    "DEGREE_ID": 102,
+    "INSTITUTION_NAME": "IIM Ahmedabad",
+    "CGPA": "8.9",
+    "GRADUATION_DATE": "2015-04-20",
+    "EMP_EMP_ID": 2
+}
+
+
+
+###
+POST http://localhost:4004/v2/odata/Project
+Content-Type: application/json
+
+{
+    "P_ID": 501,
+    "EMP_EMP_ID": 2,
+    "P_CODE": "PRJ-FIORI",
+    "P_NAME": "Fiori Launchpad Implementation",
+    "P_START_DATE": "2023-01-01",
+    "P_END_DATE": "2023-06-30",
+    "REPORTING_MANAGER": "Jane Smith",
+    "STATUS": "Completed"
+}
+
+###
+POST http://localhost:4004/v2/odata/Project
+Content-Type: application/json
+
+{
+    "P_ID": 502,
+    "EMP_EMP_ID": 2,
+    "P_CODE": "PRJ-BTP",
+    "P_NAME": "SAP BTP Extension",
+    "P_START_DATE": "2024-02-01",
+    "P_END_DATE": "2024-12-31",
+    "REPORTING_MANAGER": "Robert Brown",
+    "STATUS": "Ongoing"
+}
+
+
+###
+POST http://localhost:4004/v2/odata/Tasks
+Content-Type: application/json
+
+{
+    
+        "T_NAME" : "CRUD on OData",
+        "TASK_P_ID"   : 1,
+        "T_START_DATE" : "2024-02-01",
+        "T_END_DATE"  :   "2024-02-01",
+        "EMP_EMP_ID" : 1,
+        "STATUS":"ongoing",
+        "PROGRESS" : "50",
+        "PRIORITY" : "Low"
+}
+
+
+###
+POST http://localhost:4004/v2/odata/Timesheets
+Content-Type: application/json
+
+{
+  "ENTRY_DATE": "2024-02-01",
+  "HOURS_WORKED": 6.75,
+  "PROJECT_P_ID": 502,
+  "TASK_T_ID": "a692cd05-0c65-4612-abb7-93e3ae35ff5f",
+  "REMARKS": "CRUD Operation",
+  "EMP_EMP_ID": 1
+}
+
+
+###
+GET http://localhost:4004/v2/odata/Timesheets
